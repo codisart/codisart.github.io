@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Code coopération</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Code coopération</h1>
+
+					<h3>Comment travailler ensemble sur du code ?</h3>
+					<h4>Peut s'appliquer dans d'autre domaines</h4>
+				</section>
+				<section>
+					<h1>Sommaire</h1>
+
+					<ul>
+						<li>Demander de l'aide</li>
+						<li>Canard en plastique></li>
+						<li>Code review</li>
+						<li>Peer Programming</li>
+						<li>Communication</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Demander de l'aide (pour le demandeur)</h1>
+
+					<ul>
+						<li>NE VOUS INQUIETEZ PAS ! VOUS NE NOUS DERANGEZ PAS !</li>
+						<li>Essayer d'exprimer votre besoin premier</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Demander de l'aide (pour le demandé)</h1>
+
+					<ul>
+						<li>SOYEZ DISPONIBLE !</li>
+						<li>Essayer de résoudre le besoin premier</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Canard en plastique</h1>
+					<h3>Rubber duck debugging</h3>
+
+					<ul>
+						<li>Expliquer votre problème à quelqu'un </li>
+						<li>Prendre du recul</li>
+						<li>Anecdote du chat de Jack H. Hetherington</li>
+					</ul>
+				</section>
+				<section>
+					<p>Code review</p>
+					<p class='fragment'>aussi appelé peer review</p>
+				</section>
+				<section>
+					<h1>Code review - les bénefices</h1>
+
+					<ul>
+						<li>partage de connaissance</li>
+						<li>mise en commun d'habitudes et de pratiques</li>
+						<li>harmoniser les pratiques de l'équipe</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Code review - comment faire ?</h1>
+
+					<ul>
+						<li>demander et donner son avis</li>
+						<li>relire</li>
+						<li>tester</li>
+						<li class="fragment">EGOLESS !</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Peer programming - les bénéfices</h1>
+
+					<ul>
+						<li>partage de connaissance</li>
+						<li>mise en commun d'habitudes et de pratiques</li>
+						<li>harmoniser les pratiques de l'équipe</li>
+						<li class='fragment'>plus rapide plus efficace mais plus couteux en temps</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Peer programming - mise en place</h1>
+
+					<ul>
+						<li>Un seul ordinateur</li>
+						<li>Chacun code à son tour</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Peer programming - mise en place à distance</h1>
+
+					<ul>
+						<li>Visio conférence</li>
+						<li>Un seul partage son écran</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Communication</h1>
+
+					<ul>
+						<li>le plus souvent possible</li>
+						<li>attention à l'isolement</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
