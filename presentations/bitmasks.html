@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bitmasking</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Stockage d'informations booléennes</h1>
+
+					<h3>Bitmasking</h3>
+				</section>
+				<section>
+					<h2>Est il possible de différencier uniquement chaque humain de la terre ?</h2>
+				</section>
+				<section>
+					<h3>Le calcul booléen</h3>
+					<ul>
+						<li>Algébre utilisant des expressions à 2 valeurs</li>
+						<li>Exemples: interrupteur on/off, vrai ou faux, Oui ou Non, bit</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Multiples valeurs booléennes</h3>
+					<ul>
+						<li>Si N valeurs booléennes, 2^n états possibles existent</li>
+                        <li>Possible d'utiliser une expression binaire ou décimale</li>
+                        <li>Il existe une et une seule façon de décomposer un nombre décimal en nombre binaire</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Combien d'humains sur terre ?</h3>
+					<ul>
+						<li>7.9 billions de humains sur terre (Novembre 2021)</li>
+						<li>En binaire: 111010110111000000110111100000000</li>
+                        <li>Au moins 33 booléens, arrondissons à 34</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Comment différencier chaque humain ?</h3>
+					<p>
+                        Il existe théoriquement 34 "yes-no" questions capable de "classifier" chaque humain.
+                    </p>
+				</section>
+				<section>
+					<h3>Quelles sont les questions que vous pouvez imaginer ?</h3>
+				</section>
+				<section>
+					<h2>Application en programming et notre base de données</h2>
+				</section>
+                <section>
+					<h3>Imaginons un questionnaire à 3 questions ?</h3>
+                                    
+					<ul>
+						<li>Avez-vous eu le COVID ?</li>
+                        <li>Avez-vous plus de 30 ans ?</li>
+						<li>Vivez-vous dans le 15ème arrondissement ?</li>
+					</ul>
+                </section>
+                <section>
+					<h3>Représentation des questions en binaire (Bitmasking)</h3>
+                                    
+					<ul>
+                        <li>gotCovid? = 001 (1) </li>
+                        <li>has30? = 010 (2) </li>
+                        <li>liveIn15? = 100 (4) </li>
+					</ul>
+                </section>
+                <section>
+					<h3>Le cas "Louis"</h3>                    
+					<ul>
+						<li>Réponses: Oui / Oui / Oui</li>
+						<li>Converti en binaire: 1 1 1 </li>
+                        <li>Stocké en décimal: 7</li>
+					</ul>
+                </section>
+                <section>
+					<h3>Le cas "Isao"</h3>                    
+					<ul>
+						<li>Réponses: Non / Oui / Oui</li>
+						<li>Converti en binaire: 0 1 1 </li>
+                        <li>Stocké en décimal: 3</li>
+					</ul>
+                </section>
+                <section>
+					<h3>Quel serait le décimal stocké pour vous ?</h3>       
+                </section>
+                <section>
+					<h3>Comment connaitre une information parmi les 3 ?</h3>                    
+					<ul>
+						<li>Qu'a répondu l'utilisateur, si on a stocké</li>
+						<li>0 ? 6 ? 4 ?</li>
+                        <li>Opération </li>
+					</ul>
+                </section>
+                <section>
+					<h3>Comment connaitre une information parmi les 3 ?</h3>                    
+					<ul>
+						<li>Qu'a répondu l'utilisateur, si on a stocké: 0 ? 6 ? 4 ?</li>
+                        <li>Opération bit à bit</li>
+                        <li>5 & 4 = 4</li>
+                        <li>5 & 2 = 0</li>
+					</ul>
+                </section>
+                <section>
+					<h3>Pros & Cons</h3>                    
+					<ul>
+						<li>Ultra light à stocker, une seule colonne</li>
+						<li>Peut etre difficile à appréhender si nombre de booléens importants (que veut dire 355343 ?)</li>
+					</ul>
+                </section>
+                <section>
+					<h3>Cas d'utilisation courante: Les autorisations de fichiers sur linux et macos</h3>                    
+					<ul>
+						<li>7: Tous les droits (écriture, lecture, éxecution) => rwx</li>
+						<li>5: (lecture et éxecution) => r-x</li>
+					</ul>
+                </section>
+			</div>
+		</div>	
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
