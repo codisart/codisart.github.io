@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Code coopération</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Compilateurs et interpréteurs</h1>
+
+					<h3>Comment passer du code à un programme utilisable ?</h3>
+				</section>
+				<section>
+					<h2>Comment ça marche un ordinateur ?</h2>
+				</section>
+				<section>
+					<h2>Processeur, données et instructions</h2>
+
+					<ul>
+						<li>Le processeur à un set d'instructions simples (X86 , ARM , etc...)</li>
+						<li>Il peut éxécuter ces instructions sur des données en mémoire</li>
+						<li>Tout est binaire
+							<ul>
+								<li>Données en mémoire</li>
+								<li>Instructions (language machine)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Exécuter un programme</h2>
+
+					<ul>
+						<li>C'est un fichier dit éxécutable</li>
+						<li>Liste d'instructions à suivre</li>
+						<li>Processeur traite/lit le fichier</li>
+						<li>Premiers logiciels ont été créés directement en instructions binaires</li>
+					</ul>
+				</section>
+				<section>
+					<img src="https://i.ytimg.com/vi/_f1PDl1TynE/sddefault.jpg" width="500">
+				</section>	
+				<section>
+					<h3>Ca a l'air compliqué de créer des logiciels comme ça.</h3>
+				</section>
+				<section>
+					<h2>Languages compilés</h2>
+
+					<ul>
+						<li>Ecrire du code plus lisible par un humain</li>
+						<li>Code transformé en instructions</li>
+						<li>Un ou plusieurs fichiers textes sont transformé en fichier exécutable</li>
+						<li>Programme spécial : le compilateur</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Assembleur</h2>
+
+					<li>Langage du plus bas niveau lisible par un humain</li>
+					<li>Très proche du language machine</li>
+				</section>	
+				<section>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Motorola_6800_Assembly_Language.png" width="400">
+				</section>	
+				<section>
+					<h2>Tu es sur que c'est plus simple ?</h2>
+				</section>		
+				<section>
+					<h2>Languages haut niveau</h2>
+
+					<ul>
+						<li>Beaucoup plus lisible par un humain</li>
+						<li>Exemples
+							<ul>
+								<li>C/C++ (gcc)</li>
+								<li>fortran</li>
+								<li>go</li>
+								<li>rust</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<img src="https://sdz-upload.s3.amazonaws.com/prod/upload/fichier%20c.jpg" width="400">
+				</section>
+				<section>
+					<h2>Les compilateurs</h2>
+
+					<li>sont eux mêmes des programmes compilés</li>
+					<li>souvent d'abord écrit dans un language plus ancien</li>
+					<li>Puis récrit dans le même language</li>
+				</section>
+				<section>
+					<h2>Caractéristiques des Languages compilés</h2>
+					
+					<li>plus rapides et efficient</li>
+					<li>nécessite un temps de compilation</li>
+					<li>Doit être compiler pour chaque plateforme</li>
+					<li>la compilation peut échouer</li>
+				</section>
+
+				<section>
+					<h2>Languages interprétés</h2>
+
+					<ul>
+						<li>Programme spécial : l'interpreteur</li>
+						<li>Le programme éxécuté c'est l'interpreteur</li>
+						<li>Code transformé en instructions par l'interpreteur à la volée</li>
+						<li>Exemples
+							<ul>
+								<li>PHP</li>
+								<li>ruby</li>
+								<li>python</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Les interpréteurs</h2>
+
+					<li>sont eux mêmes des programmes compilés</li>
+					<li>souvent écrits dans un language différent</li>
+					<li>Exemple: PHP est écrit en C</li>
+				</section>
+
+				<section>
+					<h2>Caractéristiques des languages interprétés</h2>
+					
+					<li>plus lents à l'éxécution</li>
+					<li>plus facilement multi-plateforme</li>
+					<li>l'éxécution peut être stoppée pour débugger</li>
+				</section>
+
+				<section>
+					<h2>Hybrides</h2>
+
+					<li>Une première étape de compilation</li>
+					<li>Une deuxième étape interprétée</li>
+					<li>Exemples
+						<ul>
+							<li>Java</li>
+							<li>C#</li>
+						</ul>
+					</li>
+				</section>
+				<section>
+					<h2>De quelle catégorie fait partie </h2>
+
+					<ul>
+						<li>Matlab ? </li>
+						<li>Javascript ? </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Systemes d'exploitation</h2>
+
+					<p>Programme un peu a part</p>
+					<p>Souvent doit être compilé par rapport au matériel</p>
+				</section>
+
+				<section>
+					<h2>Questions ?</h2>
+				</section>
+				<section>
+					<h2>Merci</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
